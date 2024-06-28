@@ -18,6 +18,9 @@ init:
 init-ci:
 	terraform init --migrate-state --backend-config=./stages/dev/backend.hcl --var-file=./stages/dev/variables.tfvars
 
+validate:
+	terraform validate
+
 plan:
 	terraform plan -var-file=./stages/dev/variables.tfvars 
 	
