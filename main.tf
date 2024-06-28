@@ -1,8 +1,3 @@
-resource "google_project_service" "compute_api" {
-  service            = "compute.googleapis.com"
-  disable_on_destroy = false
-}
-
 module "vpc" {
   source = "./modules/vpc"
 
@@ -23,4 +18,8 @@ module "webserver" {
     env     = var.environment
     project = var.project_name
   }
+
+  depends_on = [
+    module.vpc
+  ]
 }
