@@ -13,7 +13,10 @@ ar:
 	gcloud artifacts repositories create docker-repo --repository-format=docker --location=us-central1 --description="Docker repository"
 
 init:
-	tf init
+	terraform init
+
+init-ci:
+	terraform init --migrate-state --backend-config=./stages/dev/backend.hcl --var-file=./stages/dev/variables.tfvars
 
 plan:
 	terraform plan -var-file=./stages/dev/variables.tfvars 

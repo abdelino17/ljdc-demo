@@ -20,7 +20,7 @@ jobs:
           terraform_version: '1.8.4'
 
       - name: init the tf configuration
-        run: make init
+        run: make init-ci
 
       - name: validate the tf configuration
         run: make validate
