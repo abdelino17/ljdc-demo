@@ -4,12 +4,12 @@ provider "google" {
   region  = var.gcp_region
 }
 
-terraform {
-  backend "gcs" {}
-}
-
 # terraform {
 #   backend "local" {
 
 #   }
 # }
+
+terraform {
+  backend "gcs" {}
+}
